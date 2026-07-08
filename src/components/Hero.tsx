@@ -211,7 +211,7 @@ export default function Hero() {
       className="dot-grid relative w-full overflow-hidden pt-28 pb-12 sm:pt-32 min-[900px]:pt-0"
     >
       {/* Large-screen artistic stage */}
-      <div className="relative mx-auto hidden w-full max-w-[1440px] min-[900px]:-mt-[65px] min-[900px]:block" style={{ aspectRatio: "1440 / 768" }}>
+      <div className="relative mx-auto hidden w-full max-w-[1440px] min-[900px]:-mt-[65px] min-[900px]:block min-[900px]:-translate-y-20" style={{ aspectRatio: "1440 / 768" }}>
         {tags.map((tag) => (
           <FloatingTag
             key={tag.label}
@@ -268,7 +268,7 @@ export default function Hero() {
       </div>
 
       {/* Mobile / tablet stacked layout */}
-      <div className="mx-auto flex max-w-2xl flex-col items-center px-6 text-center min-[900px]:hidden">
+      <div className="mx-auto flex max-w-2xl flex-col items-center px-6 text-center sm:-translate-y-20 min-[900px]:hidden">
         <div className="relative mb-5 h-8 w-full">
           <div className="absolute inset-x-0 top-[-10px] flex flex-wrap items-center justify-center gap-2">
             <Pill tag={tags[0]} />
