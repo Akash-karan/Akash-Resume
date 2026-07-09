@@ -1,7 +1,7 @@
 export const site = {
   name: "Akash R",
   role: "Product Designer",
-  title: "Akash R — Product Designer",
+  title: "Akash Resume",
   description:
     "Akash R is a Product Designer turning ideas into thoughtful, curious, human-centred screens. Portfolio, work, and what makes me tick.",
   url: "https://akashr.design",
