@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { gmailComposeHref, nav, site } from "@/lib/site";
 import { DownloadIcon } from "@/components/icons";
+import Logo from "@/components/Logo";
 
 function smoothScrollTo(href: string) {
   const id = href.replace("#", "");
@@ -69,22 +70,7 @@ export default function Nav() {
           }}
           className="group relative block h-9 w-[28px] shrink-0 sm:h-[55px] sm:w-[43px]"
         >
-          <Image
-            src="/images/logo.svg"
-            alt="Akash R"
-            width={43}
-            height={55}
-            priority
-            className="absolute inset-0 h-full w-full opacity-100 transition-opacity duration-300 ease-out group-hover:opacity-0"
-          />
-          <Image
-            src="/images/logo-hover.svg"
-            alt=""
-            aria-hidden="true"
-            width={43}
-            height={55}
-            className="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
-          />
+          <Logo className="h-full w-full" />
         </a>
 
         {/* Desktop cluster */}
