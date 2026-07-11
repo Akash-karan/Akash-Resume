@@ -11,11 +11,8 @@ export default function Works() {
   const [lookRight, setLookRight] = useState(true);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
     const handleMouseMove = (e: MouseEvent) => {
-      const svgEl = section.querySelector("svg");
+      const svgEl = document.querySelector("#works svg");
       if (!svgEl) return;
 
       const rect = svgEl.getBoundingClientRect();
@@ -24,16 +21,10 @@ export default function Works() {
       setLookRight(e.clientX > eyeX);
     };
 
-    const handleMouseLeave = () => {
-      setLookRight(true);
-    };
-
-    section.addEventListener("mousemove", handleMouseMove);
-    section.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      section.removeEventListener("mousemove", handleMouseMove);
-      section.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
