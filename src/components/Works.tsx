@@ -5,10 +5,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { site } from "@/lib/site";
 import WorksCharacter from "./WorksCharacter";
+import RocketAnimation from "./RocketAnimation";
 
 export default function Works() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [lookRight, setLookRight] = useState(true);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -34,6 +36,7 @@ export default function Works() {
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
+        onViewportEnter={() => setIsInView(true)}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="relative mx-auto w-full max-w-[1136px] overflow-visible rounded-xl border border-black bg-[#ffe68c] p-6 drop-shadow-[0px_1px_1px_rgba(16,24,40,0.05)] sm:p-8"
       >
@@ -45,7 +48,10 @@ export default function Works() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="pointer-events-none absolute bottom-0 left-[-15px] hidden w-[510px] min-[900px]:block xl:w-[630px]"
         >
-          <WorksCharacter className="h-auto w-full" lookRight={lookRight} />
+          <div className="relative w-full">
+            <WorksCharacter className="h-auto w-full" lookRight={lookRight} />
+            {isInView && <RocketAnimation className="absolute top-0 left-0 h-auto w-full" />}
+          </div>
         </motion.div>
 
         <div className="flex flex-col items-start min-[900px]:items-end">
