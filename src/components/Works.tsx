@@ -1,13 +1,44 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { site } from "@/lib/site";
 import WorksCharacter from "./WorksCharacter";
 
 export default function Works() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [lookRight, setLookRight] = useState(true);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const svgEl = section.querySelector("svg");
+      if (!svgEl) return;
+
+      const rect = svgEl.getBoundingClientRect();
+      const eyeX = rect.left + rect.width * (180 / 604);
+
+      setLookRight(e.clientX > eyeX);
+    };
+
+    const handleMouseLeave = () => {
+      setLookRight(true);
+    };
+
+    section.addEventListener("mousemove", handleMouseMove);
+    section.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      section.removeEventListener("mousemove", handleMouseMove);
+      section.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
-    <section id="works" className="dot-grid w-full px-4 py-16 sm:px-6 sm:py-24">
+    <section ref={sectionRef} id="works" className="dot-grid w-full px-4 py-16 sm:px-6 sm:py-24">
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -21,9 +52,9 @@ export default function Works() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="pointer-events-none absolute bottom-0 left-[-55px] hidden w-[510px] min-[900px]:block xl:w-[630px]"
+          className="pointer-events-none absolute bottom-0 left-[-15px] hidden w-[510px] min-[900px]:block xl:w-[630px]"
         >
-          <WorksCharacter className="h-auto w-full" />
+          <WorksCharacter className="h-auto w-full" lookRight={lookRight} />
         </motion.div>
 
         <div className="flex flex-col items-start min-[900px]:items-end">

@@ -1,30 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
-export default function WorksCharacter({ className }: { className?: string }) {
+export default function WorksCharacter({ className, lookRight }: { className?: string; lookRight: boolean }) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const [lookRight, setLookRight] = useState(true);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!svgRef.current) return;
-      const rect = svgRef.current.getBoundingClientRect();
-      
-      // Calculate the screen X position of the eyes.
-      // The eyes are at X ~ 180 out of 604 in the SVG coordinate space.
-      const eyeX = rect.left + rect.width * (180 / 604);
-      
-      // If cursor is to the right of the eyes, look right (at the monitor/content).
-      // Otherwise, look left (back/behind).
-      setLookRight(e.clientX > eyeX);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   return (
     <svg
@@ -34,6 +13,7 @@ export default function WorksCharacter({ className }: { className?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Interactive eye follow SVG"
+      style={{ overflow: "hidden" }}
     >
       {/* Background container is transparent, so we omit the original white background rect */}
 
