@@ -50,7 +50,12 @@ export default function Works() {
         >
           <div className="relative w-full">
             <WorksCharacter className="h-auto w-full" lookRight={lookRight} />
-            {isInView && <RocketAnimation className="absolute top-0 left-0 h-auto w-full" />}
+            {isInView && (
+              <RocketAnimation
+                className="absolute top-0 left-0 h-auto w-full"
+                style={{ transform: "translateX(120px)" }}
+              />
+            )}
           </div>
         </motion.div>
 

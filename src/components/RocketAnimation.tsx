@@ -1,10 +1,11 @@
 import React from "react";
 
-export default function RocketAnimation({ className }: { className?: string }) {
+export default function RocketAnimation({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg
       id="rocket-path-animation"
       className={className}
+      style={style}
       viewBox="0 0 604 423"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
