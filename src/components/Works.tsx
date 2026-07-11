@@ -53,7 +53,7 @@ export default function Works() {
             {isInView && (
               <RocketAnimation
                 className="absolute top-0 left-0 h-auto w-full"
-                style={{ transform: "translateX(230px)" }}
+                style={{ transform: "translateX(190px)" }}
               />
             )}
           </div>
