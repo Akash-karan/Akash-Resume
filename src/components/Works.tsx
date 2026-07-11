@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { site } from "@/lib/site";
+import WorksCharacter from "./WorksCharacter";
 
 export default function Works() {
   return (
@@ -22,13 +23,7 @@ export default function Works() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="pointer-events-none absolute bottom-0 left-[-55px] hidden w-[510px] min-[900px]:block xl:w-[630px]"
         >
-          <Image
-            src="/images/works-character.svg"
-            alt="Illustration of Akash working at a computer with a paper plane flying out"
-            width={668}
-            height={423}
-            className="h-auto w-full"
-          />
+          <WorksCharacter className="h-auto w-full" />
         </motion.div>
 
         <div className="flex flex-col items-start min-[900px]:items-end">
