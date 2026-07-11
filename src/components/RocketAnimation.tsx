@@ -1,6 +1,50 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+
+const ROCKET_MOTION_PATH =
+  "M115 196C132 191 145 184 154 174C164 163 171 148 173 140C177 126 172 116 164 112C153 106 140 110 136 123C132 136 139 145 151 149C167 155 184 153 192 146C207 135 223 117 232 106C239 93 243 87 246.337 83.214";
 
 export default function RocketAnimation({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  const pathRef = useRef<SVGPathElement>(null);
+  const rocketRef = useRef<SVGGElement>(null);
+
+  useEffect(() => {
+    const path = pathRef.current;
+    const rocket = rocketRef.current;
+    if (!path || !rocket) return;
+
+    let frameId = 0;
+    const duration = 2600;
+    const pathLength = path.getTotalLength();
+
+    const updateRocket = (progress: number) => {
+      const distance = pathLength * progress;
+      const point = path.getPointAtLength(distance);
+      const previousPoint = path.getPointAtLength(Math.max(distance - 1, 0));
+      const nextPoint = path.getPointAtLength(Math.min(distance + 1, pathLength));
+      const angle = (Math.atan2(nextPoint.y - previousPoint.y, nextPoint.x - previousPoint.x) * 180) / Math.PI;
+
+      rocket.setAttribute("transform", `translate(${point.x} ${point.y}) rotate(${angle})`);
+      rocket.style.opacity = "1";
+    };
+
+    updateRocket(0);
+
+    const startTime = performance.now();
+    const animate = (time: number) => {
+      const rawProgress = Math.min((time - startTime) / duration, 1);
+      updateRocket(rawProgress);
+
+      if (rawProgress < 1) {
+        frameId = requestAnimationFrame(animate);
+      }
+    };
+
+    frameId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+    };
+  }, []);
   return (
     <svg
       id="rocket-path-animation"
@@ -41,8 +85,8 @@ export default function RocketAnimation({ className, style }: { className?: stri
 
       <defs>
         <path
-          id="rocketMotionPath"
-          d="M115 196C132 191 145 184 154 174C164 163 171 148 173 140C177 126 172 116 164 112C153 106 140 110 136 123C132 136 139 145 151 149C167 155 184 153 192 146C207 135 223 117 232 106C239 93 243 87 246.337 83.214"
+          ref={pathRef}
+          d={ROCKET_MOTION_PATH}
         />
       </defs>
 
@@ -139,11 +183,7 @@ export default function RocketAnimation({ className, style }: { className?: stri
         />
       </g>
 
-      <g className="rocket">
-        <animateMotion dur="2.6s" repeatCount="1" fill="freeze" rotate="auto" calcMode="paced">
-          <mpath href="#rocketMotionPath" />
-        </animateMotion>
-
+      <g ref={rocketRef} className="rocket" opacity="0">
         <g transform="translate(-238 -73)">
           <g transform="rotate(38 257 66)">
             <path

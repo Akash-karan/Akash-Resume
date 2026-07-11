@@ -31,12 +31,11 @@ export default function Works() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="works" className="dot-grid w-full px-4 py-16 sm:px-6 sm:py-24">
+    <section ref={sectionRef} id="works" className="dot-grid w-full px-4 pt-[200px] pb-16 sm:px-6 sm:pb-24">
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
-        onViewportEnter={() => setIsInView(true)}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="relative mx-auto w-full max-w-[1136px] overflow-visible rounded-xl border border-black bg-[#ffe68c] p-6 drop-shadow-[0px_1px_1px_rgba(16,24,40,0.05)] sm:p-8"
       >
@@ -45,6 +44,7 @@ export default function Works() {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
+          onViewportEnter={() => setIsInView(true)}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="pointer-events-none absolute bottom-0 left-[-15px] hidden w-[510px] min-[900px]:block xl:w-[630px]"
         >
