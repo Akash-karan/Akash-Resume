@@ -48,8 +48,8 @@
 }
 
 :root {
-  /* Based on public/Background.svg (#49494A dots), set to 30% opacity */
-  --dot-color: rgba(73, 73, 74, 0.3);
+  /* Based on public/Background.svg (#49494A dots), set to 25% opacity */
+  --dot-color: rgba(73, 73, 74, 0.25);
 }
 
 html {
