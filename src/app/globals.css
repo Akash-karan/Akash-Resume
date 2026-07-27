@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Super Pencil';
+  src: url('/fonts/Super_Pencil.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Brand / accent */
+  --color-brand: #dc6803;
+  --color-brand-hover: #b8590a;
+
+  /* Text */
+  --color-ink: #101828;
+  --color-ink-soft: #475467;
+  --color-paper: #ffffff;
+
+  /* Surfaces */
+  --color-canvas: #fdfcf9;
+  --color-note-blue: #b9e6fe;
+  --color-note-yellow: #ffd84d;
+  --color-footer: #0e0e0e;
+
+  /* Sticker / tag palette */
+  --color-tag-purple: #927cff;
+  --color-tag-pink: #d82363;
+  --color-tag-blue: #189ffa;
+  --color-tag-yellow: #ffc700;
+
+  /* Misc palette */
+  --color-sand: #e8e7e3;
+  --color-coral: #f7a7a6;
+  --color-sky: #7ec6dc;
+
+  /* Fonts */
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+  --font-caveat: var(--font-caveat-brush);
+  --font-carter: var(--font-carter-one);
+  --font-marker: var(--font-inter);
+  --font-super-pencil: var(--font-super-pencil);
+  --font-kalam: var(--font-kalam);
+
+  /* Layout */
+  --breakpoint-xl: 1440px;
+}
+
+:root {
+  /* Based on public/Background.svg (#49494A dots), softened to 10% opacity */
+  --dot-color: rgba(73, 73, 74, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  background-image: url('/Background.svg');
+  background-repeat: repeat-y;
+  background-size: 1440px auto;
+  background-position: top center;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Dot-grid backdrop used across the site — mirrors public/Background.svg (18px grid) */
+.dot-grid {
+  background-color: #ffffff;
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1.5px);
+  background-size: 18px 18px;
+  background-position: 9px 10px;
+}
+
+/* Ruled index-card paper for the AI Builds notes: one rule every 26px, matching
+   the 26px body line-height so the text sits on the lines. */
+.note-ruled {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 21px,
+    #cce9ff 21px,
+    #cce9ff 22px,
+    transparent 22px,
+    transparent 26px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Infinite Loop Scrolling Ribbons */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 30s linear infinite;
+}
