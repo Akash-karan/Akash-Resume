@@ -58,10 +58,9 @@ html {
 
 body {
   background-color: #ffffff;
-  background-image: url('/Background.svg');
-  background-repeat: repeat-y;
-  background-size: 1440px auto;
-  background-position: top center;
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1.5px);
+  background-size: 18px 18px;
+  background-position: 9px 10px;
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
