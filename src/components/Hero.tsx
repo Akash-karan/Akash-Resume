@@ -63,7 +63,7 @@ export default function Hero() {
                 onClick={handleNameClick}
                 whileHover={{ scale: 1.05, rotate: 1 }}
                 whileTap={{ scale: 0.95 }}
-                className="font-super-pencil text-[72px] sm:text-[80px] md:text-[96px] leading-[1.1] text-[#dc6803] cursor-pointer inline-block drop-shadow-[2px_2px_0px_rgba(0,0,0,0.1)]"
+                className="font-super-pencil text-[72px] sm:text-[80px] md:text-[96px] leading-[1.1] text-[#dc6803] cursor-pointer inline-block drop-shadow-[2px_2px_0px_rgba(0,0,0,0.1)] translate-y-[2px]"
               >
                 Akash
               </motion.span>
@@ -113,7 +113,7 @@ export default function Hero() {
                 style={{ left: "0px", top: "0px", width: "100%", height: "100%" }}
               >
                 <div 
-                  className={`-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-kalam justify-center leading-[0] left-[474.63px] not-italic text-[24px] text-center top-[-53.53px] tracking-[-0.48px] whitespace-nowrap transition-colors duration-300 ${
+                  className={`-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-kalam justify-center leading-[0] left-[474.63px] not-italic text-[24px] text-center top-[-51.53px] tracking-[-0.48px] whitespace-nowrap transition-colors duration-300 ${
                     isHighlighting ? "text-[#dc6803] font-bold" : "text-black/70"
                   }`}
                 >
@@ -122,7 +122,7 @@ export default function Hero() {
                 
                 {/* Arrow */}
                 <div 
-                  className="absolute flex items-center justify-center left-[363px] w-[50.405px] h-[50.405px] top-[-57.09px]"
+                  className="absolute flex items-center justify-center left-[363px] w-[50.405px] h-[50.405px] top-[-55.09px]"
                 >
                   <div className="-scale-y-100 flex-none rotate-[90.47deg]">
                     <div className="overflow-clip relative w-[50px] h-[50px]">
@@ -245,7 +245,7 @@ export default function Hero() {
 
       {/* Floating Scroll to Explore text */}
       <div className="absolute bottom-6 flex flex-col items-center select-none pointer-events-none">
-        <span className="font-kalam text-[24px] text-black/40 tracking-[-0.48px] not-italic">
+        <span className="font-kalam text-[24px] text-black/25 tracking-[-0.48px] not-italic">
           Scroll to Explore
         </span>
       </div>
