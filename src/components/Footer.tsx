@@ -198,12 +198,12 @@ export default function Footer() {
 
           {/* Rotated Contact Bar (Behance, Resume, LinkedIn, X) */}
           <div 
-            className="absolute flex h-[158.46px] items-center justify-center left-[107.68px] top-[115.7px] w-[914.34px] z-20 pointer-events-auto"
+            className="absolute flex h-[160px] items-center justify-center left-[130px] top-[112px] w-[940px] z-20 pointer-events-auto"
           >
             <div className="flex-none rotate-[-6.5deg]">
-              <div className="content-stretch flex items-center justify-between w-[913.95px]">
+              <div className="content-stretch flex items-center justify-between w-[935px]">
                 {/* Behance & Resume */}
-                <div className="[word-break:break-word] content-stretch flex font-kalam font-bold gap-[64px] items-center leading-[0] not-italic relative shrink-0 text-[30px] text-black/60 whitespace-nowrap">
+                <div className="[word-break:break-word] content-stretch flex font-kalam font-bold gap-[64px] items-center leading-[0] not-italic relative shrink-0 text-[36px] text-black/60 whitespace-nowrap">
                   <a
                     href={site.socials.behance}
                     target="_blank"
@@ -223,12 +223,12 @@ export default function Footer() {
                 </div>
                 
                 {/* LinkedIn & X */}
-                <div className="content-stretch flex gap-5 items-center">
+                <div className="content-stretch flex gap-6 items-center">
                   <a
                     href={site.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[55px] h-[55px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
+                    className="w-[64px] h-[64px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
                   >
                     <img src="/images/footer/icon-x.svg" className="size-full" alt="LinkedIn" />
                   </a>
@@ -236,7 +236,7 @@ export default function Footer() {
                     href={site.socials.x}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[55px] h-[55px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
+                    className="w-[64px] h-[64px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
                   >
                     <img src="/images/footer/icon-linkedin.svg" className="size-full" alt="X" />
                   </a>
@@ -247,20 +247,20 @@ export default function Footer() {
 
           {/* Rotated Center Message */}
           <div 
-            className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[157.80px] items-center justify-center left-[566.52px] top-[366.9px] w-[627.54px] z-20 pointer-events-auto"
+            className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[160px] items-center justify-center left-[595px] top-[366.9px] w-[680px] z-20 pointer-events-auto"
           >
             <div className="flex-none rotate-[-6.5deg]">
-              <div className="[word-break:break-word] flex flex-col font-kalam font-bold justify-center leading-[0] not-italic relative text-[36px] text-black/80 text-center tracking-[-0.72px] w-[621.57px]">
+              <div className="[word-break:break-word] flex flex-col font-kalam font-bold justify-center leading-[0] not-italic relative text-[42px] text-black/80 text-center tracking-[-0.72px] w-[670px]">
                 <p>
-                  <span className="leading-[44px]">Always curious to meet fellow creatives </span>
+                  <span className="leading-[52px]">Always curious to meet fellow creatives </span>
                   <a
                     href={gmailComposeHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative inline-block no-underline group leading-[44px] text-black/60 hover:text-black transition-colors"
+                    className="relative inline-block no-underline group leading-[52px] text-black/60 hover:text-black transition-colors"
                   >
                     Lets Connect
-                    <span className="absolute left-0 bottom-[2px] h-[3px] w-0 bg-black transition-all duration-300 ease-out group-hover:w-full" />
+                    <span className="absolute left-0 bottom-[2px] h-[3.5px] w-0 bg-black transition-all duration-300 ease-out group-hover:w-full" />
                   </a>
                 </p>
               </div>
