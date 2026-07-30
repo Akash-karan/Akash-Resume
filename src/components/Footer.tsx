@@ -198,7 +198,7 @@ export default function Footer() {
 
           {/* Rotated Contact Bar (Behance, Resume, LinkedIn, X) */}
           <div 
-            className="absolute flex h-[158.46px] items-center justify-center left-[107.68px] top-[115.7px] w-[914.34px] z-20 pointer-events-auto"
+            className="absolute flex h-[158.46px] items-center justify-center left-[27.68px] top-[115.7px] w-[914.34px] z-20 pointer-events-auto"
           >
             <div className="flex-none rotate-[-6.5deg]">
               <div className="content-stretch flex items-center justify-between w-[913.95px]">
@@ -247,7 +247,7 @@ export default function Footer() {
 
           {/* Rotated Center Message */}
           <div 
-            className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[157.80px] items-center justify-center left-[566.52px] top-[366.9px] w-[627.54px] z-20 pointer-events-auto"
+            className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[157.80px] items-center justify-center left-[486.52px] top-[366.9px] w-[627.54px] z-20 pointer-events-auto"
           >
             <div className="flex-none rotate-[-6.5deg]">
               <div className="[word-break:break-word] flex flex-col font-kalam font-bold justify-center leading-[0] not-italic relative text-[36px] text-black/80 text-center tracking-[-0.72px] w-[621.57px]">
