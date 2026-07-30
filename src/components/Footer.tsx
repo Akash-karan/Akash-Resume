@@ -279,7 +279,7 @@ export default function Footer() {
             <div className="flex-none rotate-[-6.5deg]">
               <div className="[word-break:break-word] flex flex-col font-kalam font-bold justify-center items-center leading-[0] not-italic relative text-[40px] text-black/80 text-center tracking-[-0.72px] w-[750px]">
                 <p className="flex flex-col items-center">
-                  <span className="leading-[48px] whitespace-nowrap">Always curious to meet fellow creatives</span>
+                  <span className="leading-[48px] whitespace-nowrap -translate-y-[5px]">Always curious to meet fellow creatives</span>
                   <a
                     href={gmailComposeHref}
                     target="_blank"
