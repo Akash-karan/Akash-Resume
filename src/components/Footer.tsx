@@ -198,7 +198,7 @@ export default function Footer() {
 
           {/* Rotated Contact Bar (Behance, Resume, LinkedIn, X) */}
           <div 
-            className="absolute flex h-[158.46px] items-center justify-center left-[2.68px] top-[115.7px] w-[914.34px] z-20 pointer-events-auto"
+            className="absolute flex h-[158.46px] items-center justify-center left-[2.68px] top-[130.7px] w-[914.34px] z-20 pointer-events-auto"
           >
             <div className="flex-none rotate-[-6.5deg]">
               <div className="content-stretch flex items-center justify-between w-[913.95px]">
@@ -228,7 +228,7 @@ export default function Footer() {
                     href={site.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[40px] h-[40px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
+                    className="w-[90px] h-[90px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
                   >
                     <img src="/images/footer/icon-x.svg" className="size-full" alt="LinkedIn" />
                   </a>
@@ -236,7 +236,7 @@ export default function Footer() {
                     href={site.socials.x}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[40px] h-[40px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
+                    className="w-[90px] h-[90px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
                   >
                     <img src="/images/footer/icon-linkedin.svg" className="size-full" alt="X" />
                   </a>
