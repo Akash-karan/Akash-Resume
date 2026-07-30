@@ -191,7 +191,7 @@ export default function Footer() {
 
           {/* Character */}
           <div 
-            className="absolute left-[1030px] top-[-26px] rotate-[23.5deg] z-10 pointer-events-none scale-[1.15] origin-bottom-left"
+            className="absolute left-[960px] top-[-26px] rotate-[23.5deg] z-10 pointer-events-none scale-[1.15] origin-bottom-left"
           >
             <FooterCharacter views={views} />
           </div>
