@@ -154,7 +154,7 @@ export default function Work() {
         </h3>
 
         {/* Ribbon 1: Teaming Up With You As Well!! */}
-        <div className="absolute inset-x-0 top-[57.03%] z-10 flex -translate-y-1/2 justify-center translate-x-[25px]">
+        <div className="absolute inset-x-0 top-[57.03%] z-10 flex -translate-y-1/2 justify-center translate-x-[50px]">
           <div className="rotate-7">
             <div className="h-[68px] sm:h-[84px] md:h-[100px] w-[120vw] overflow-hidden bg-[#182230] shadow-[0px_4px_15px_rgba(0,0,0,0.15)]">
               <div className="animate-marquee h-full items-center gap-[80px] sm:gap-[120px] md:gap-[160px]">
@@ -174,7 +174,7 @@ export default function Work() {
         </div>
 
         {/* Ribbon 2: Skills & Avatars */}
-        <div className="absolute inset-x-0 top-[51.37%] z-20 flex -translate-y-1/2 justify-center translate-x-[25px]">
+        <div className="absolute inset-x-0 top-[51.37%] z-20 flex -translate-y-1/2 justify-center translate-x-[50px]">
           <div className="-rotate-10">
             <div className="h-[68px] sm:h-[84px] md:h-[100px] w-[120vw] overflow-hidden bg-[#dc6803] shadow-[0px_6px_20px_rgba(0,0,0,0.2)]">
               {/* Four repeats so the -50% marquee shift lands on a whole number of cycles */}
