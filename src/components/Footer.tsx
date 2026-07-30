@@ -175,8 +175,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Desktop Layout - Exact Figma Coordinates */}
-        <div className="hidden lg:block relative w-full h-[420px] lg:min-h-[415px]">
+        {/* Desktop Layout - Scaled Down 25% & Centered */}
+        <div className="hidden lg:block relative w-full h-[315px] origin-center scale-[0.75]">
           {/* Squiggle Banner Background (Under/Over) */}
           <img
             src="/images/footer/squiggle-under.svg"
