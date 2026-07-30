@@ -175,8 +175,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Desktop Layout - Scaled Down 25% & Centered */}
-        <div className="hidden lg:block relative w-full h-[315px] origin-center scale-[0.75]">
+        {/* Desktop Layout - Scaled Down & Visually Centered */}
+        <div className="hidden lg:block relative w-full h-[315px] origin-center scale-[0.75] translate-x-[80px]">
           {/* Squiggle Banner Background (Under/Over) */}
           <img
             src="/images/footer/squiggle-under.svg"
