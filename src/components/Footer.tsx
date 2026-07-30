@@ -198,10 +198,10 @@ export default function Footer() {
 
           {/* Rotated Contact Bar (Behance, Resume, LinkedIn, X) */}
           <div 
-            className="absolute flex h-[158.46px] items-center justify-center left-[2.68px] top-[130.7px] w-[914.34px] z-20 pointer-events-auto"
+            className="absolute flex h-[158.46px] items-center justify-center left-[-50px] top-[130.7px] w-[1040px] z-20 pointer-events-auto"
           >
             <div className="flex-none rotate-[-6.5deg]">
-              <div className="content-stretch flex items-center justify-between w-[913.95px]">
+              <div className="content-stretch flex items-center justify-between w-[1040px]">
                 {/* Behance & Resume */}
                 <div className="[word-break:break-word] content-stretch flex font-kalam font-bold gap-[64px] items-center leading-[0] not-italic relative shrink-0 text-[40px] text-black/60 whitespace-nowrap">
                   <a
