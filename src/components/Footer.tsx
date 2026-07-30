@@ -127,7 +127,7 @@ export default function Footer() {
 
   return (
     <footer ref={footerRef} className="w-full pb-16 pt-8 overflow-hidden select-none">
-      <div className="relative mx-auto w-full max-w-[1136px] px-6 md:max-w-[722px] lg:max-w-[1136px] -translate-y-[30px]">
+      <div className="relative mx-auto w-full max-w-[1136px] px-6 md:max-w-[722px] lg:max-w-[1136px] -translate-y-[70px]">
         
         {/* Mobile/Tablet Card Layout */}
         <div className={`lg:hidden w-full bg-[#f7a7a6] rounded-[24px] p-8 flex flex-col items-center gap-8 relative overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-900 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
