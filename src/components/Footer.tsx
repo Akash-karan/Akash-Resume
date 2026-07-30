@@ -203,7 +203,7 @@ export default function Footer() {
             <div className="flex-none rotate-[-6.5deg]">
               <div className="content-stretch flex items-center justify-between w-[1040px]">
                 {/* Behance & Resume */}
-                <div className="[word-break:break-word] content-stretch flex font-kalam font-bold gap-[64px] items-center leading-[0] not-italic relative shrink-0 text-[40px] text-black/60 whitespace-nowrap -translate-x-[20px]">
+                <div className="[word-break:break-word] content-stretch flex font-kalam font-bold gap-[64px] items-center leading-[0] not-italic relative shrink-0 text-[40px] text-black/60 whitespace-nowrap -translate-x-[80px]">
                   <a
                     href={site.socials.behance}
                     target="_blank"
@@ -228,7 +228,7 @@ export default function Footer() {
                     href={site.socials.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[90px] h-[90px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
+                    className="w-[90px] h-[90px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90 flex items-center justify-center"
                   >
                     <img src="/images/footer/icon-x.svg" className="size-full" alt="LinkedIn" />
                   </a>
@@ -236,9 +236,9 @@ export default function Footer() {
                     href={site.socials.x}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-[90px] h-[90px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
+                    className="w-[90px] h-[90px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90 flex items-center justify-center"
                   >
-                    <img src="/images/footer/icon-linkedin.svg" className="size-full" alt="X" />
+                    <img src="/images/footer/icon-linkedin.svg" className="w-[80px] h-[80px] max-w-none" alt="X" />
                   </a>
                 </div>
               </div>
