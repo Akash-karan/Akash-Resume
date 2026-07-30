@@ -203,7 +203,7 @@ export default function Footer() {
             <div className="flex-none rotate-[-6.5deg]">
               <div className="content-stretch flex items-center justify-between w-[913.95px]">
                 {/* Behance & Resume */}
-                <div className="[word-break:break-word] content-stretch flex font-kalam font-bold gap-[64px] items-center leading-[0] not-italic relative shrink-0 text-[40px] text-black/60 whitespace-nowrap">
+                <div className="[word-break:break-word] content-stretch flex font-kalam font-bold gap-[70px] items-center leading-[0] not-italic relative shrink-0 text-[40px] text-black/60 whitespace-nowrap">
                   <a
                     href={site.socials.behance}
                     target="_blank"
