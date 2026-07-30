@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { site, gmailComposeHref } from "@/lib/site";
 
 interface FooterCharacterProps {
@@ -95,6 +95,8 @@ function FooterCharacter({ views }: FooterCharacterProps) {
 
 export default function Footer() {
   const [views, setViews] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -106,12 +108,31 @@ export default function Footer() {
     }
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer className="w-full pb-16 pt-8 overflow-hidden select-none">
+    <footer ref={footerRef} className="w-full pb-16 pt-8 overflow-hidden select-none">
       <div className="relative mx-auto w-full max-w-[1136px] px-6 md:max-w-[722px] lg:max-w-[1136px] -translate-y-[30px]">
         
         {/* Mobile/Tablet Card Layout */}
-        <div className="lg:hidden w-full bg-[#f7a7a6] rounded-[24px] p-8 flex flex-col items-center gap-8 relative overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+        <div className={`lg:hidden w-full bg-[#f7a7a6] rounded-[24px] p-8 flex flex-col items-center gap-8 relative overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+        }`}>
           {/* Squiggle line overlays */}
           <div className="absolute inset-0 size-full opacity-10 pointer-events-none bg-repeat bg-[url('/images/footer/squiggle-over.svg')] bg-cover" />
           
@@ -176,29 +197,39 @@ export default function Footer() {
         </div>
 
         {/* Desktop Layout - Scaled Down & Visually Centered */}
-        <div className="hidden lg:block relative w-full h-[315px] origin-center scale-[0.75] translate-x-[80px]">
+        <div className={`hidden lg:block relative w-full h-[315px] origin-center scale-[0.75] translate-x-[80px] transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
+        }`}>
           {/* Squiggle Banner Background (Under/Over) */}
           <img
             src="/images/footer/squiggle-under.svg"
-            className="absolute left-[-371.5px] top-[102.7px] w-[1639.25px] h-[1640.90px] max-w-none mix-blend-multiply"
+            className={`absolute left-[-371.5px] top-[102.7px] w-[1639.25px] h-[1640.90px] max-w-none mix-blend-multiply transition-all duration-700 delay-100 ${
+              isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
             alt=""
           />
           <img
             src="/images/footer/squiggle-over.svg"
-            className="absolute left-[-399.25px] top-[80px] w-[1639.25px] h-[1640.95px] max-w-none"
+            className={`absolute left-[-399.25px] top-[80px] w-[1639.25px] h-[1640.95px] max-w-none transition-all duration-700 delay-150 ${
+              isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
             alt=""
           />
 
           {/* Character */}
           <div 
-            className="absolute left-[935px] top-[-41px] rotate-[23.5deg] z-10 pointer-events-none scale-[1.15] origin-bottom-left"
+            className={`absolute left-[935px] top-[-41px] rotate-[23.5deg] z-10 pointer-events-none scale-[1.15] origin-bottom-left transition-all duration-700 delay-400 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+              isVisible ? "opacity-100 translate-x-0 translate-y-0" : "opacity-0 translate-x-12 translate-y-8"
+            }`}
           >
             <FooterCharacter views={views} />
           </div>
 
           {/* Rotated Contact Bar (Behance, Resume, LinkedIn, X) */}
           <div 
-            className="absolute flex h-[158.46px] items-center justify-center left-[-50px] top-[130.7px] w-[1040px] z-20 pointer-events-auto"
+            className={`absolute flex h-[158.46px] items-center justify-center left-[-50px] top-[130.7px] w-[1040px] z-20 pointer-events-auto transition-all duration-700 delay-250 ease-out ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }`}
           >
             <div className="flex-none rotate-[-6.5deg]">
               <div className="content-stretch flex items-center justify-between w-[1040px]">
@@ -247,7 +278,9 @@ export default function Footer() {
 
           {/* Rotated Center Message */}
           <div 
-            className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[160px] items-center justify-center left-[461.52px] top-[386.9px] w-[760px] z-20 pointer-events-auto"
+            className={`-translate-x-1/2 -translate-y-1/2 absolute flex h-[160px] items-center justify-center left-[461.52px] top-[386.9px] w-[760px] z-20 pointer-events-auto transition-all duration-700 delay-350 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+              isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90 translate-y-4"
+            }`}
           >
             <div className="flex-none rotate-[-6.5deg]">
               <div className="[word-break:break-word] flex flex-col font-kalam font-bold justify-center items-center leading-[0] not-italic relative text-[40px] text-black/80 text-center tracking-[-0.72px] w-[750px]">
