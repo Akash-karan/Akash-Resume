@@ -247,7 +247,7 @@ export default function Footer() {
 
           {/* Rotated Center Message */}
           <div 
-            className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[160px] items-center justify-center left-[461.52px] top-[366.9px] w-[760px] z-20 pointer-events-auto"
+            className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[160px] items-center justify-center left-[461.52px] top-[386.9px] w-[760px] z-20 pointer-events-auto"
           >
             <div className="flex-none rotate-[-6.5deg]">
               <div className="[word-break:break-word] flex flex-col font-kalam font-bold justify-center items-center leading-[0] not-italic relative text-[40px] text-black/80 text-center tracking-[-0.72px] w-[750px]">
