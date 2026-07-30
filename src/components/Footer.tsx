@@ -199,10 +199,10 @@ export default function Footer() {
         </div>
 
         {/* Desktop Layout - Scaled Down & Visually Centered */}
-        <div className={`hidden lg:block relative w-full h-[315px] origin-bottom-left scale-[0.75] translate-x-[80px] transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+        <div className={`hidden lg:block relative w-full h-[315px] origin-bottom scale-[0.75] translate-x-[120px] transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
           isVisible
             ? "opacity-100 translate-y-0 rotate-0"
-            : "opacity-0 translate-y-[100px] -rotate-12"
+            : "opacity-0 translate-y-[100px] -rotate-6"
         }`}>
           {/* Squiggle Banner Background (Under/Over) */}
           <img
