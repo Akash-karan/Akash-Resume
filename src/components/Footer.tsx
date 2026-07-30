@@ -126,7 +126,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer ref={footerRef} className="w-full pb-16 pt-8 overflow-hidden select-none">
+    <footer ref={footerRef} className="w-full pb-16 pt-2 -mt-[10px] overflow-hidden select-none">
       <div className="relative mx-auto w-full max-w-[1136px] px-6 md:max-w-[722px] lg:max-w-[1136px] -translate-y-[70px]">
         
         {/* Mobile/Tablet Card Layout */}
