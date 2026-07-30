@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { gmailComposeHref } from "@/lib/site";
+import { site, gmailComposeHref } from "@/lib/site";
 import NoteCard from "./NoteCard";
 
 export default function Hero() {
@@ -80,7 +80,7 @@ export default function Hero() {
           </div>
 
           <a
-            href={gmailComposeHref}
+            href={site.socials.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex w-fit items-center justify-center rounded-full border border-[#d0d5dd] bg-white px-5 py-2.5 text-[14px] font-black text-[#344054] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] transition-[transform,box-shadow,background-color] duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-[3px] hover:shadow-[0px_6px_0px_0px_#000] active:translate-y-0 active:shadow-none hover:bg-neutral-50 active:bg-neutral-100 cursor-pointer"
