@@ -20,7 +20,7 @@ const builds: AiBuild[] = [
 
 export default function AiBuilds() {
   return (
-    <section id="vibe-code" className="relative w-full pt-20 pb-28">
+    <section id="vibe-code" className="relative w-full pt-[20px] sm:pt-20 pb-28">
       <div className="relative mx-auto w-full max-w-[1136px] px-6 md:max-w-[722px] lg:max-w-[1136px]">
 
         {/* Header Block — mirrors the Work section's title block */}

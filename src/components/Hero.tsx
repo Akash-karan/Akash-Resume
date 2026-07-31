@@ -50,7 +50,7 @@ export default function Hero() {
       id="top"
       className="relative min-h-screen w-full overflow-hidden pb-16 pt-24 md:pt-28 flex flex-col justify-center items-center"
     >
-      <div className="relative mx-auto w-full max-w-[1136px] md:max-w-[722px] lg:max-w-[1136px] px-6 flex flex-col lg:flex-row items-center lg:items-end justify-between gap-12 lg:gap-8 pt-12 md:pt-16 lg:pt-20">
+      <div className="relative mx-auto w-full max-w-[1136px] md:max-w-[722px] lg:max-w-[1136px] px-6 flex flex-col lg:flex-row items-center lg:items-end justify-between gap-12 lg:gap-8 pt-0 -translate-y-[10px]">
         
         {/* Left Column: Text & CTA */}
         <div className="flex flex-col gap-6 md:gap-8 w-full max-w-[514px] text-left shrink-0 z-10 relative">
@@ -144,7 +144,7 @@ export default function Hero() {
         </div>
 
         {/* Right Column: Illustration Stage */}
-        <div className="relative w-[341px] h-[206px] sm:w-[580px] sm:h-[350px] shrink-0 z-10">
+        <div className="relative mx-auto w-full max-w-[341px] aspect-[341/206] sm:max-w-[580px] sm:h-[350px] shrink-0 z-10">
 
           {/* Card outline (Union) */}
           <div className="absolute inset-[-1.6%_-1.45%_-2.16%_-0.88%]">
@@ -180,13 +180,13 @@ export default function Hero() {
             <motion.div
               drag
               dragConstraints={screenRef}
-              dragElastic={0.02}
+              dragElastic={0.01}
               dragMomentum={false}
               whileHover={{ scale: 1.15 }}
               whileDrag={{ scale: 1.2, cursor: "grabbing" }}
               initial={{ rotate: -7.63 }}
-              style={{ touchAction: "none" }}
-              className="absolute left-[calc(32%-8px)] top-[25%] w-[32px] h-[31px] sm:w-[47px] sm:h-[46px] bg-[#ff8901] rounded-[2px] p-[4px] sm:p-[6px] shadow-[2px_2px_4px_rgba(16,24,40,0.15)] flex items-center justify-center cursor-grab pointer-events-auto z-20"
+              style={{ touchAction: "pan-y" }}
+              className="absolute left-[calc(22%-1px)] top-[28%] w-[32px] h-[31px] sm:w-[47px] sm:h-[46px] bg-[#ff8901] rounded-[2px] p-[4px] sm:p-[6px] shadow-[2px_2px_4px_rgba(16,24,40,0.15)] flex items-center justify-center cursor-grab pointer-events-auto z-20"
             >
               <div className="relative w-full h-full pointer-events-none select-none">
                 <Image
@@ -211,13 +211,13 @@ export default function Hero() {
             <motion.div
               drag
               dragConstraints={screenRef}
-              dragElastic={0.02}
+              dragElastic={0.01}
               dragMomentum={false}
               whileHover={{ scale: 1.15 }}
               whileDrag={{ scale: 1.2, cursor: "grabbing" }}
               initial={{ rotate: -7.63 }}
-              style={{ touchAction: "none" }}
-              className="absolute left-[calc(55%-8px)] top-[22%] w-[32px] h-[31px] sm:w-[47px] sm:h-[46px] bg-white border border-neutral-200 rounded-[2px] p-[4px] sm:p-[6px] shadow-[2px_2px_4px_rgba(16,24,40,0.15)] flex items-center justify-center cursor-grab pointer-events-auto z-20"
+              style={{ touchAction: "pan-y" }}
+              className="absolute left-[calc(55%-1px)] top-[22%] w-[32px] h-[31px] sm:w-[47px] sm:h-[46px] bg-white border border-neutral-200 rounded-[2px] p-[4px] sm:p-[6px] shadow-[2px_2px_4px_rgba(16,24,40,0.15)] flex items-center justify-center cursor-grab pointer-events-auto z-20"
             >
               <div className="relative w-full h-full scale-[0.85] pointer-events-none select-none">
                 <Image
@@ -244,7 +244,7 @@ export default function Hero() {
       </div>
 
       {/* Floating Scroll to Explore text */}
-      <div className="absolute bottom-6 flex flex-col items-center select-none pointer-events-none">
+      <div className="absolute bottom-6 hidden md:flex flex-col items-center select-none pointer-events-none">
         <span className="font-kalam text-[24px] text-black/25 tracking-[-0.48px] not-italic">
           Scroll to Explore
         </span>

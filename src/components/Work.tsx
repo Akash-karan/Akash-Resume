@@ -95,7 +95,7 @@ export default function Work() {
   });
 
   return (
-    <section id="works" className="relative w-full overflow-hidden pt-20 pb-28">
+    <section id="works" className="relative w-full overflow-hidden pt-[55px] sm:pt-20 pb-28">
       
       {/* Works List Container */}
       <div className="relative mx-auto w-full max-w-[1136px] md:max-w-[722px] lg:max-w-[1136px] px-6">

@@ -288,7 +288,7 @@ function ClanPolaroid() {
 
 export default function About() {
   return (
-    <section id="about" className="relative w-full overflow-x-clip pt-20 pb-28">
+    <section id="about" className="relative w-full overflow-x-clip pt-[60px] sm:pt-20 pb-28">
       <div className="relative mx-auto w-full max-w-[1136px] px-6 md:max-w-[722px] lg:max-w-[1136px] flex flex-col gap-8 items-start lg:min-h-[415px]">
         {/* Title block */}
         <div className="flex flex-col gap-2">

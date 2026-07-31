@@ -202,79 +202,134 @@ export default function WorkCard({ project }: WorkCardProps) {
       transition={{ duration: 0.5, ease: "easeOut" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative bg-white border border-[#eaecf0] border-solid hover:border-transparent flex flex-col sm:flex-row gap-[32px] items-start overflow-hidden p-[24px] rounded-[12px] shadow-[0px_1px_3px_0px_rgba(16,24,40,0.1),0px_1px_2px_0px_rgba(16,24,40,0.06)] hover:shadow-[0px_0.474px_14px_0px_rgba(0,0,0,0.15)] transition-all duration-300 w-full sm:h-[260px]"
+      className="w-full flex flex-col items-start"
     >
-      {/* Left Column: Content info */}
-      <div className="flex flex-col gap-[12px] h-full items-start pb-0 relative shrink-0 w-full sm:w-[221.946px]">
-        <div className="flex items-center relative shrink-0">
-          <h3 className="font-sans font-bold text-[24px] text-black leading-[32px] transition-colors duration-300">
+      {/* Mobile Card Layout (Figma Node 638:14974) */}
+      <div className="sm:hidden flex flex-col w-full rounded-[12px] overflow-hidden border border-[#eaecf0] bg-white shadow-[0px_1px_3px_0px_rgba(16,24,40,0.1),0px_1px_2px_0px_rgba(16,24,40,0.06)]">
+        {/* Top Image Cover */}
+        <div className="relative w-full h-[220px] shrink-0 overflow-hidden">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover pointer-events-none"
+            sizes="100vw"
+          />
+        </div>
+
+        {/* Bottom Content Body */}
+        <div className="flex flex-col gap-[12px] p-[24px] bg-white w-full">
+          <h3 className="font-sans font-bold text-[18px] text-black leading-[28px]">
             {project.title}
           </h3>
+
+          {/* Badges Row */}
+          <div className="flex flex-wrap gap-[8px] w-full">
+            {project.badges.map((badge, idx) => (
+              <div
+                key={idx}
+                className="bg-[#f2f4f7] flex gap-[2px] items-center px-[8px] py-[2px] rounded-full shrink-0"
+              >
+                <span className="font-sans font-medium leading-[20px] text-[14px] text-[#667085] text-center whitespace-nowrap">
+                  {badge}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Description */}
+          <p className="font-sans font-medium text-[16px] leading-[24px] text-[#475467]">
+            {project.description}
+          </p>
+
+          {/* View Button */}
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white border border-[#d0d5dd] flex items-center justify-center px-[12px] py-[8px] rounded-full shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] w-full cursor-pointer transition-all duration-300 hover:bg-neutral-50 active:bg-neutral-100 mt-1"
+          >
+            <span className="font-sans font-black text-[14px] leading-[20px] text-[#344054]">
+              View
+            </span>
+          </a>
         </div>
-        <p className="font-sans font-medium text-[16px] leading-[24px] text-[#475467] w-full flex-1">
-          {project.description}
-        </p>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white border border-[#d0d5dd] border-solid flex gap-[4px] items-center justify-center px-[12px] py-[8px] relative rounded-full shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0 w-full cursor-pointer transition-[transform,box-shadow,background-color] duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-[3px] hover:shadow-[0px_6px_0px_0px_#000] active:translate-y-0 active:shadow-none hover:bg-neutral-50 active:bg-neutral-100"
-        >
-          <span className="font-sans font-black leading-[20px] text-[14px] text-[#344054]">
-            View
-          </span>
-        </a>
       </div>
 
-      {/* Right Column: Badges and Graphics */}
-      <div className="flex flex-col gap-[20px] h-full items-start min-w-px relative w-full sm:flex-1">
-        {/* Badges container */}
-        <div className="gap-x-[8px] gap-y-[8px] flex flex-wrap relative shrink-0 w-full">
-          {project.badges.map((badge, idx) => (
-            <div
-              key={idx}
-              className="bg-[#f2f4f7] flex gap-[2px] items-center px-[8px] py-[2px] relative rounded-full shrink-0"
-            >
-              <span className="font-sans font-medium leading-[20px] text-[14px] text-[#667085] text-center whitespace-nowrap">
-                {badge}
-              </span>
-            </div>
-          ))}
+      {/* Desktop Card Layout */}
+      <div className="hidden sm:flex group relative bg-white border border-[#eaecf0] border-solid hover:border-transparent flex-row gap-[32px] items-start overflow-hidden p-[24px] rounded-[12px] shadow-[0px_1px_3px_0px_rgba(16,24,40,0.1),0px_1px_2px_0px_rgba(16,24,40,0.06)] hover:shadow-[0px_0.474px_14px_0px_rgba(0,0,0,0.15)] transition-all duration-300 w-full h-[260px]">
+        {/* Left Column: Content info */}
+        <div className="flex flex-col gap-[12px] h-full items-start pb-0 relative shrink-0 w-[221.946px]">
+          <div className="flex items-center relative shrink-0">
+            <h3 className="font-sans font-bold text-[24px] text-black leading-[32px] transition-colors duration-300">
+              {project.title}
+            </h3>
+          </div>
+          <p className="font-sans font-medium text-[16px] leading-[24px] text-[#475467] w-full flex-1">
+            {project.description}
+          </p>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white border border-[#d0d5dd] border-solid flex gap-[4px] items-center justify-center px-[12px] py-[8px] relative rounded-full shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0 w-full cursor-pointer transition-[transform,box-shadow,background-color] duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-[3px] hover:shadow-[0px_6px_0px_0px_#000] active:translate-y-0 active:shadow-none hover:bg-neutral-50 active:bg-neutral-100"
+          >
+            <span className="font-sans font-black leading-[20px] text-[14px] text-[#344054]">
+              View
+            </span>
+          </a>
         </div>
 
-        {/* Project Thumbnail Image wrapper */}
-        <div className="flex-1 min-h-[180px] sm:min-h-px w-full relative">
-          <div className="absolute left-0 top-0 w-[272px] h-[192px] flex items-center justify-center">
-            {/* Standard Thumbnail (Fades out on hover) */}
-            <motion.div
-              initial={false}
-              animate={{ opacity: mockups[project.title] && isHovered ? 0 : 1 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute inset-0 w-full h-full"
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover transform group-hover:scale-[1.05] transition-transform duration-500 pointer-events-none"
-                sizes="272px"
-              />
-            </motion.div>
+        {/* Right Column: Badges and Graphics */}
+        <div className="flex flex-col gap-[20px] h-full items-start min-w-px relative flex-1">
+          {/* Badges container */}
+          <div className="gap-x-[8px] gap-y-[8px] flex flex-wrap relative shrink-0 w-full">
+            {project.badges.map((badge, idx) => (
+              <div
+                key={idx}
+                className="bg-[#f2f4f7] flex gap-[2px] items-center px-[8px] py-[2px] relative rounded-full shrink-0"
+              >
+                <span className="font-sans font-medium leading-[20px] text-[14px] text-[#667085] text-center whitespace-nowrap">
+                  {badge}
+                </span>
+              </div>
+            ))}
+          </div>
 
-            {/* Figma Mockup Frame (Fades in on hover) */}
-            {mockups[project.title] && (() => {
-              const MockupComponent = mockups[project.title];
-              return (
-                <motion.div
-                  initial={false}
-                  animate={{ opacity: isHovered ? 1 : 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                >
-                  <MockupComponent />
-                </motion.div>
-              );
-            })()}
+          {/* Project Thumbnail Image wrapper */}
+          <div className="flex-1 min-h-px w-full relative">
+            <div className="absolute left-0 top-0 w-[272px] h-[192px] flex items-center justify-center">
+              {/* Standard Thumbnail (Fades out on hover) */}
+              <motion.div
+                initial={false}
+                animate={{ opacity: mockups[project.title] && isHovered ? 0 : 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full"
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transform group-hover:scale-[1.05] transition-transform duration-500 pointer-events-none"
+                  sizes="272px"
+                />
+              </motion.div>
+
+              {/* Figma Mockup Frame (Fades in on hover) */}
+              {mockups[project.title] && (() => {
+                const MockupComponent = mockups[project.title];
+                return (
+                  <motion.div
+                    initial={false}
+                    animate={{ opacity: isHovered ? 1 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                  >
+                    <MockupComponent />
+                  </motion.div>
+                );
+              })()}
+            </div>
           </div>
         </div>
       </div>
