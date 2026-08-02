@@ -168,18 +168,8 @@ export default function Hero() {
             />
           </div>
 
-          {/* Interactive Ruled Note Card Component (hidden on tablet; replaced by the fixed 'name' card below) */}
-          <div className="max-md:block md:hidden">
-            <NoteCard clickCount={clickCount} onNext={handleNextCardState} onCardClickBeforeActive={handleCardClickBeforeActive} />
-          </div>
-
-          {/* Tablet-only fixed 'name' card showing the Akash wordmark */}
-          <div className="hidden md:flex lg:hidden flex-col items-center justify-center fixed top-1/2 right-6 -translate-y-1/2 z-30 rounded-[6px] border border-[#ababab] bg-white px-5 py-4 shadow-[0px_1px_2px_0px_rgba(16,24,40,0.1)] select-none">
-            <span className="font-super-pencil text-[#dc6803] text-[36px] leading-[1.1] drop-shadow-[2px_2px_0px_rgba(0,0,0,0.1)]">
-              Akash
-            </span>
-            <span className="mt-1 font-kalam text-[12px] text-black/60">Product Designer</span>
-          </div>
+          {/* Interactive Ruled Note Card Component */}
+          <NoteCard clickCount={clickCount} onNext={handleNextCardState} onCardClickBeforeActive={handleCardClickBeforeActive} />
 
           {/* Laptop Screen Boundary Container for Draggable Stickers */}
           <div 
@@ -227,7 +217,7 @@ export default function Hero() {
               whileDrag={{ scale: 1.2, cursor: "grabbing" }}
               initial={{ rotate: -7.63 }}
               style={{ touchAction: "pan-y" }}
-              className="absolute left-[calc(55%-1px)] top-[22%] md:-translate-x-[4px] w-[32px] h-[31px] sm:w-[47px] sm:h-[46px] bg-white border border-neutral-200 rounded-[2px] p-[4px] sm:p-[6px] shadow-[2px_2px_4px_rgba(16,24,40,0.15)] flex items-center justify-center cursor-grab pointer-events-auto z-20"
+              className="absolute md:left-[calc(55%-5px)] left-[calc(55%-1px)] top-[22%] w-[32px] h-[31px] sm:w-[47px] sm:h-[46px] bg-white border border-neutral-200 rounded-[2px] p-[4px] sm:p-[6px] shadow-[2px_2px_4px_rgba(16,24,40,0.15)] flex items-center justify-center cursor-grab pointer-events-auto z-20"
             >
               <div className="relative w-full h-full scale-[0.85] pointer-events-none select-none">
                 <Image
