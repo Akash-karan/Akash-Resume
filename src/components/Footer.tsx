@@ -135,7 +135,7 @@ export default function Footer() {
             ? "opacity-100 translate-y-0 rotate-0"
             : "opacity-0 translate-y-[80px] -rotate-6"
         }`}>
-            <div className="absolute left-1/2 top-[180px] h-[459.07px] w-[455px] shrink-0 -translate-x-1/2 scale-[0.92] sm:scale-100">
+            <div className="absolute left-1/2 top-[180px] h-[459.07px] w-[455px] shrink-0 -translate-x-1/2 scale-[0.8924] sm:scale-100">
             <div className="absolute inset-[2.44%_0_0_1.67%] mix-blend-multiply">
               <img alt="" className="absolute inset-0 block size-full max-w-none" src="/images/work/prof-note-shadow.svg" />
             </div>
