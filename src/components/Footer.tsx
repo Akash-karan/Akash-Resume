@@ -126,75 +126,82 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer ref={footerRef} className="w-full pb-16 pt-2 -mt-[10px] overflow-hidden select-none">
+    <footer ref={footerRef} className="w-full pb-0 pt-[72px] lg:pb-16 lg:pt-2 -mt-[10px] overflow-hidden select-none">
       <div className="relative mx-auto w-full max-w-[1136px] px-6 md:max-w-[722px] lg:max-w-[1136px] -translate-y-[70px]">
         
         {/* Mobile/Tablet Layout (Restored from repo) */}
-        <div className={`lg:hidden w-full bg-[#f7a7a6] rounded-[24px] p-8 flex flex-col items-center gap-8 relative overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all duration-900 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+          <div className={`lg:hidden relative mx-auto h-[390px] w-full max-w-[455px] transition-all duration-900 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
           isVisible
             ? "opacity-100 translate-y-0 rotate-0"
             : "opacity-0 translate-y-[80px] -rotate-6"
         }`}>
-          {/* Squiggle line overlays */}
-          <div className="absolute inset-0 size-full opacity-10 pointer-events-none bg-repeat bg-[url('/images/footer/squiggle-over.svg')] bg-cover" />
-          
-          {/* Links & Socials Row */}
-          <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-6 border-b border-black/10 pb-6 z-10">
-            <div className="flex font-kalam font-bold text-[24px] gap-8 text-black/70">
-              <a
-                href={site.socials.behance}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-black transition-colors"
-              >
-                Behance
-              </a>
-              <a
-                href={site.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-black transition-colors"
-              >
-                Resume
-              </a>
+            <div className="absolute left-1/2 top-[180px] h-[459.07px] w-[455px] shrink-0 -translate-x-1/2 scale-[0.92] sm:scale-100">
+            <div className="absolute inset-[2.44%_0_0_1.67%] mix-blend-multiply">
+              <img alt="" className="absolute inset-0 block size-full max-w-none" src="/images/work/prof-note-shadow.svg" />
             </div>
-            <div className="flex gap-4 items-center">
-              <a
-                href={site.socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-[44px] h-[44px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
-              >
-                <img src="/images/footer/icon-x.svg" className="size-full" alt="LinkedIn" />
-              </a>
-              <a
-                href={site.socials.x}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-[44px] h-[44px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
-              >
-                <img src="/images/footer/icon-linkedin.svg" className="size-full" alt="X" />
-              </a>
+            <div className="absolute inset-[1.09%_1.66%_1.35%_0]">
+              <img alt="" className="absolute inset-0 block size-full max-w-none" src="/images/work/prof-note-paper.svg" />
             </div>
-          </div>
+            <div className="absolute inset-[0_53.32%_91.23%_9.8%]">
+              <img alt="" className="absolute left-1/2 top-1/2 block w-[170px] max-w-none -translate-x-1/2 -translate-y-[calc(50%+85px)] object-contain" src="/Footer illusration.svg" />
+            </div>
 
-          {/* Connect Title */}
-          <p className="font-kalam font-bold text-[24px] sm:text-[28px] text-black/80 leading-normal text-center z-10 max-w-[480px]">
-            Always curious to meet fellow creatives <br />
-            <a
-              href={gmailComposeHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative inline-block no-underline group leading-[44px] text-black/70 hover:text-black transition-colors"
-            >
-              Lets Connect
-              <span className="absolute left-0 bottom-[2px] h-[2.5px] w-0 bg-black transition-all duration-300 ease-out group-hover:w-full" />
-            </a>
-          </p>
+            <div className="absolute inset-[13.5%_10%_10%_15.5%] flex flex-col gap-4 -rotate-[6.5deg] origin-center">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-b border-black/10 pb-4">
+                <div className="flex flex-wrap font-kalam font-bold text-[23.4px] gap-5 text-black/70 leading-none">
+                  <a
+                    href={site.socials.behance}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-black transition-colors"
+                  >
+                    Behance
+                  </a>
+                  <a
+                    href={site.resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-black transition-colors"
+                  >
+                    Resume
+                  </a>
+                </div>
+                <div className="flex translate-x-[10px] gap-4 items-center">
+                  <a
+                    href={site.socials.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-[49px] w-[49px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
+                  >
+                    <img src="/images/footer/icon-x.svg" className="size-full" alt="LinkedIn" />
+                  </a>
+                  <a
+                    href={site.socials.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-[49px] w-[49px] rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-115 hover:-translate-y-1.5 active:scale-90"
+                  >
+                    <img src="/images/footer/icon-linkedin.svg" className="size-full" alt="X" />
+                  </a>
+                </div>
+              </div>
 
-          {/* Character Peeking */}
-          <div className="mt-4 scale-90 sm:scale-100 z-10 origin-bottom">
-            <FooterCharacter views={views} />
+              <div className="flex max-w-[235px] translate-y-[7px] flex-col items-center gap-[7px] self-center text-center">
+                <p className="font-kalam font-bold text-[23.4px] text-black/80 leading-[1.25]">
+                  Always curious to meet fellow creatives
+                </p>
+                <a
+                  href={gmailComposeHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-block no-underline group font-kalam font-bold text-[23.4px] text-black/70 hover:text-black transition-colors"
+                >
+                  Lets Connect
+                  <span className="absolute left-0 bottom-[2px] h-[2.5px] w-0 bg-black transition-all duration-300 ease-out group-hover:w-full" />
+                </a>
+              </div>
+
+            </div>
           </div>
         </div>
 
