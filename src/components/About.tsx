@@ -54,23 +54,23 @@ function ReadingHover({ children }: { children: React.ReactNode }) {
       <span
         id="about-reading-popup"
         role="tooltip"
-        className={`absolute bottom-full left-0 z-30 origin-bottom-left pb-[10px] transition-[opacity,transform] duration-200 ease-out sm:left-1/2 sm:origin-bottom sm:-translate-x-1/2 ${
+        className={`absolute bottom-full left-1/2 -translate-x-1/2 origin-bottom z-30 max-w-[calc(100vw-1.5rem)] pb-[10px] transition-[opacity,transform] duration-200 ease-out ${
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none translate-y-1 opacity-0"
         }`}
       >
-        <span className="flex gap-3 rounded-md border border-[#eaecf0] bg-white px-[5px] pt-[5px] pb-[10px] shadow-[0px_2px_4px_-2px_rgba(16,24,40,0.06),0px_4px_8px_-2px_rgba(16,24,40,0.1)]">
+        <span className="flex max-sm:gap-1.5 gap-3 rounded-md border border-[#eaecf0] bg-white max-sm:px-[3px] max-sm:pt-[3px] max-sm:pb-[6px] px-[5px] pt-[5px] pb-[10px] shadow-[0px_2px_4px_-2px_rgba(16,24,40,0.06),0px_4px_8px_-2px_rgba(16,24,40,0.1)]">
           {books.map((book) => (
             <a
               key={book.title}
               href={book.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-[135px] shrink-0 flex-col items-center gap-[10px] group/book cursor-pointer"
+              className="flex max-sm:w-[80px] w-[135px] shrink-0 flex-col items-center max-sm:gap-[6px] gap-[10px] group/book cursor-pointer"
             >
               <span
-                className="relative block overflow-hidden rounded-[3px] shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 group-hover/book:-translate-y-1 group-hover/book:shadow-[0_8px_16px_rgba(0,0,0,0.15)]"
+                className="relative block overflow-hidden rounded-[3px] shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 max-sm:scale-[0.6] max-sm:origin-top group-hover/book:-translate-y-1 group-hover/book:shadow-[0_8px_16px_rgba(0,0,0,0.15)]"
                 style={{ width: book.width, height: book.height }}
               >
                 <img
@@ -79,7 +79,7 @@ function ReadingHover({ children }: { children: React.ReactNode }) {
                   className="absolute inset-0 size-full max-w-none object-cover"
                 />
               </span>
-              <span className="px-[10px] text-center font-kalam text-[12px] font-bold leading-5 text-black/70 transition-colors duration-300 group-hover/book:text-brand">
+              <span className="px-[10px] text-center font-kalam text-[10px] font-bold leading-[14px] sm:text-[12px] sm:leading-5 text-black/70 transition-colors duration-300 group-hover/book:text-brand">
                 {book.title}
               </span>
             </a>
