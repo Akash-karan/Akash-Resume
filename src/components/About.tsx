@@ -92,7 +92,7 @@ function ReadingHover({ children }: { children: React.ReactNode }) {
               className="flex max-sm:w-[80px] w-[135px] shrink-0 flex-col items-center max-sm:gap-0 gap-[10px] group/book cursor-pointer"
             >
               <span
-                className="relative block overflow-hidden rounded-[3px] shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 max-sm:scale-[0.6] max-sm:origin-top group-hover/book:-translate-y-1 group-hover/book:shadow-[0_8px_16px_rgba(0,0,0,0.15)]"
+                className="relative block overflow-hidden rounded-[3px] shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 max-sm:!h-[90px] max-sm:!w-[60px] group-hover/book:-translate-y-1 group-hover/book:shadow-[0_8px_16px_rgba(0,0,0,0.15)]"
                 style={{ width: book.width, height: book.height }}
               >
                 <img
