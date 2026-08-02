@@ -89,7 +89,7 @@ function ReadingHover({ children }: { children: React.ReactNode }) {
               href={book.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex max-sm:w-[80px] w-[135px] shrink-0 flex-col items-center max-sm:gap-[4px] gap-[10px] group/book cursor-pointer"
+              className="flex max-sm:w-[80px] w-[135px] shrink-0 flex-col items-center max-sm:gap-[2px] gap-[10px] group/book cursor-pointer"
             >
               <span
                 className="relative block overflow-hidden rounded-[3px] shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 max-sm:!h-[90px] max-sm:!w-[60px] group-hover/book:-translate-y-1 group-hover/book:shadow-[0_8px_16px_rgba(0,0,0,0.15)]"
