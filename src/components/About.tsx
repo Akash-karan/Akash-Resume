@@ -33,16 +33,34 @@ const PIN_HOME = { x: 50.73, y: 38.3 };
 
 function ReadingHover({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
+  const [side, setSide] = useState<"left" | "right">("left");
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const measureSide = () => {
+    if (typeof window === "undefined") return;
+    // Side detection only matters on mobile. Desktop/tablet keeps centered.
+    if (window.innerWidth >= 640) return;
+    const rect = buttonRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const buttonCenter = rect.left + rect.width / 2;
+    setSide(buttonCenter < window.innerWidth / 2 ? "left" : "right");
+  };
+
+  const handleOpen = () => {
+    measureSide();
+    setOpen(true);
+  };
 
   return (
     <span
       className="relative inline-block"
-      onMouseEnter={() => setOpen(true)}
+      onMouseEnter={handleOpen}
       onMouseLeave={() => setOpen(false)}
-      onFocus={() => setOpen(true)}
+      onFocus={handleOpen}
       onBlur={() => setOpen(false)}
     >
       <button
+        ref={buttonRef}
         type="button"
         className="cursor-pointer text-ink underline decoration-solid [text-underline-position:from-font] [text-decoration-skip-ink:none] transition-colors hover:text-brand focus-visible:outline-none focus-visible:text-brand"
         aria-describedby={open ? "about-reading-popup" : undefined}
@@ -54,7 +72,11 @@ function ReadingHover({ children }: { children: React.ReactNode }) {
       <span
         id="about-reading-popup"
         role="tooltip"
-        className={`absolute bottom-full left-1/2 -translate-x-1/2 origin-bottom z-30 max-w-[calc(100vw-1.5rem)] pb-[10px] transition-[opacity,transform] duration-200 ease-out ${
+        className={`absolute bottom-full z-30 max-w-[calc(100vw-1.5rem)] pb-[10px] transition-[opacity,transform] duration-200 ease-out sm:left-1/2 sm:-translate-x-1/2 sm:origin-bottom max-sm:origin-bottom-left ${
+          side === "left"
+            ? "max-sm:left-0"
+            : "max-sm:right-0 max-sm:left-auto"
+        } ${
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none translate-y-1 opacity-0"
@@ -67,7 +89,7 @@ function ReadingHover({ children }: { children: React.ReactNode }) {
               href={book.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex max-sm:w-[80px] w-[135px] shrink-0 flex-col items-center max-sm:gap-[6px] gap-[10px] group/book cursor-pointer"
+              className="flex max-sm:w-[80px] w-[135px] shrink-0 flex-col items-center max-sm:gap-[3px] gap-[10px] group/book cursor-pointer"
             >
               <span
                 className="relative block overflow-hidden rounded-[3px] shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all duration-300 max-sm:scale-[0.6] max-sm:origin-top group-hover/book:-translate-y-1 group-hover/book:shadow-[0_8px_16px_rgba(0,0,0,0.15)]"
