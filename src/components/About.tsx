@@ -270,9 +270,9 @@ function ClanPolaroid() {
       </div>
 
       <div 
-        className="pointer-events-none absolute hidden sm:block sm:translate-x-[20px]
+        className="pointer-events-none absolute hidden sm:block 
                    sm:-right-1 sm:top-[6%] sm:w-[110px] 
-                   lg:absolute lg:left-[371px] lg:top-[12px] lg:right-auto lg:w-[228px] lg:h-[104px] lg:translate-x-0"
+                   lg:absolute lg:left-[371px] lg:top-[12px] lg:right-auto lg:w-[228px] lg:h-[104px]"
       >
         <div 
           className="transition-all duration-300
