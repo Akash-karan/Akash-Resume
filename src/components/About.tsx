@@ -271,12 +271,12 @@ function ClanPolaroid() {
 
       <div 
         className="pointer-events-none absolute hidden sm:block 
-                   sm:-right-1 sm:top-[6%] sm:w-[110px] 
+                   sm:-right-1 sm:top-[6%] sm:w-[110px] md:translate-x-[80px] lg:translate-x-0
                    lg:absolute lg:left-[371px] lg:top-[12px] lg:right-auto lg:w-[228px] lg:h-[104px]"
       >
         <div 
           className="transition-all duration-300
-                     sm:text-center sm:font-kalam sm:text-[20px] sm:leading-[1.2] sm:tracking-[-0.48px] sm:text-black/70 sm:rotate-[-6.1deg]
+                     sm:text-center sm:font-kalam sm:text-[20px] sm:leading-[1.2] sm:tracking-[-0.48px] sm:text-black/70 sm:rotate-[-6.1deg] md:translate-x-[50px] md:translate-y-[25px]
                      lg:absolute lg:left-[110px] lg:top-[35px] lg:w-[118px] lg:h-[70px] lg:text-[24px] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:flex lg:items-center lg:justify-center lg:rotate-0"
         >
           <div className="rotate-0 lg:rotate-[-6.1deg]">

@@ -256,8 +256,86 @@ export default function WorkCard({ project }: WorkCardProps) {
         </div>
       </div>
 
+      {/* Tablet Card Layout (Figma Node 638:1555) */}
+      <div className="hidden sm:flex lg:hidden group relative bg-white border border-[#eaecf0] border-solid hover:border-transparent flex-row gap-[32px] items-start overflow-hidden px-[32px] py-[24px] rounded-[12px] shadow-[0px_1px_3px_0px_rgba(16,24,40,0.1),0px_1px_2px_0px_rgba(16,24,40,0.06)] hover:shadow-[0px_0.474px_14px_0px_rgba(0,0,0,0.15)] transition-all duration-300 w-full h-[260px]">
+        {/* Left Column: Content info */}
+        <div className="flex flex-col gap-[12px] h-full items-start relative flex-1 min-w-0">
+          <div className="flex items-center relative shrink-0">
+            <h3 className="font-sans font-bold text-[24px] text-black leading-[32px] transition-colors duration-300">
+              {project.title}
+            </h3>
+          </div>
+          <p className="font-sans font-medium text-[16px] leading-[24px] text-[#475467] w-full flex-1">
+            {project.description}
+          </p>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white border border-[#d0d5dd] border-solid flex gap-[4px] items-center justify-center px-[12px] py-[8px] relative rounded-full shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0 w-full cursor-pointer transition-[transform,box-shadow,background-color] duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-[3px] hover:shadow-[0px_6px_0px_0px_#000] active:translate-y-0 active:shadow-none hover:bg-neutral-50 active:bg-neutral-100"
+          >
+            <span className="font-sans font-black leading-[20px] text-[14px] text-[#344054]">
+              View
+            </span>
+          </a>
+        </div>
+
+        {/* Right Column: Badges and Graphics (Tablet: 313px width) */}
+        <div className="flex flex-col gap-[20px] h-full items-start relative shrink-0 w-[313px]">
+          {/* Badges container */}
+          <div className="gap-x-[8px] gap-y-[8px] flex flex-wrap relative shrink-0 w-full">
+            {project.badges.map((badge, idx) => (
+              <div
+                key={idx}
+                className="bg-[#f2f4f7] flex gap-[2px] items-center px-[8px] py-[2px] relative rounded-full shrink-0"
+              >
+                <span className="font-sans font-medium leading-[20px] text-[14px] text-[#667085] text-center whitespace-nowrap">
+                  {badge}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Project Thumbnail Image wrapper using Absolute Positioning (Flows to 342.83px and cropped by outer card frame) */}
+          <div className="flex-1 min-h-px w-[313px] relative">
+            <div className="absolute top-0 left-0 w-[342.833px] h-[242px]">
+              {/* Standard Thumbnail (Absolute positioning, flowing to full dimensions) */}
+              <motion.div
+                initial={false}
+                animate={{ opacity: mockups[project.title] && isHovered ? 0 : 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full shadow-[0px_12px_16px_-4px_rgba(16,24,40,0.08),0px_4px_6px_-2px_rgba(16,24,40,0.03)] rounded-[8px] overflow-hidden"
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transform group-hover:scale-[1.05] transition-transform duration-500 pointer-events-none"
+                  sizes="343px"
+                />
+              </motion.div>
+
+              {/* Figma Mockup Frame (Absolute positioning) */}
+              {mockups[project.title] && (() => {
+                const MockupComponent = mockups[project.title];
+                return (
+                  <motion.div
+                    initial={false}
+                    animate={{ opacity: isHovered ? 1 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                  >
+                    <MockupComponent />
+                  </motion.div>
+                );
+              })()}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Desktop Card Layout */}
-      <div className="hidden sm:flex group relative bg-white border border-[#eaecf0] border-solid hover:border-transparent flex-row gap-[32px] items-start overflow-hidden p-[24px] rounded-[12px] shadow-[0px_1px_3px_0px_rgba(16,24,40,0.1),0px_1px_2px_0px_rgba(16,24,40,0.06)] hover:shadow-[0px_0.474px_14px_0px_rgba(0,0,0,0.15)] transition-all duration-300 w-full h-[260px]">
+      <div className="hidden lg:flex group relative bg-white border border-[#eaecf0] border-solid hover:border-transparent flex-row gap-[32px] items-start overflow-hidden p-[24px] rounded-[12px] shadow-[0px_1px_3px_0px_rgba(16,24,40,0.1),0px_1px_2px_0px_rgba(16,24,40,0.06)] hover:shadow-[0px_0.474px_14px_0px_rgba(0,0,0,0.15)] transition-all duration-300 w-full h-[260px]">
         {/* Left Column: Content info */}
         <div className="flex flex-col gap-[12px] h-full items-start pb-0 relative shrink-0 w-[221.946px]">
           <div className="flex items-center relative shrink-0">

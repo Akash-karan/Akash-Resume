@@ -171,10 +171,10 @@ export default function Footer() {
       <div className="relative mx-auto w-full max-w-[1136px] px-6 md:max-w-[722px] lg:max-w-[1136px] -translate-y-[70px]">
         
         {/* Mobile/Tablet Layout (Restored from repo) */}
-          <div className={`lg:hidden relative mx-auto h-[390px] w-full max-w-[455px] transition-all duration-900 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+        <div className={`lg:hidden relative mx-auto h-[390px] w-full max-w-[455px] transition-all duration-900 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
           isVisible
-            ? "opacity-100 translate-y-0 rotate-0"
-            : "opacity-0 translate-y-[80px] -rotate-6"
+            ? "opacity-100 translate-y-0 md:translate-y-[15px] rotate-0"
+            : "opacity-0 translate-y-[80px] md:translate-y-[95px] -rotate-6"
         }`}>
             <div className="absolute left-1/2 top-[180px] h-[459.07px] w-[455px] shrink-0 -translate-x-1/2 scale-[0.8924] sm:scale-100">
             <div className="absolute inset-[2.44%_0_0_1.67%] mix-blend-multiply">
