@@ -189,7 +189,7 @@ export default function Footer() {
 
             <div className="absolute inset-[13.5%_10%_10%_15.5%] flex flex-col gap-4 -rotate-[6.5deg] origin-center">
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-b border-black/10 pb-4">
-                <div className="flex flex-wrap font-kalam font-bold text-[23.4px] gap-5 text-black/70 leading-none">
+                <div className="flex flex-wrap font-kalam font-bold text-[23.4px] gap-5 text-black/60 leading-none">
                   <a
                     href={site.socials.behance}
                     target="_blank"
@@ -235,7 +235,7 @@ export default function Footer() {
                   href={gmailComposeHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative inline-block no-underline group font-kalam font-bold text-[23.4px] text-black/70 hover:text-black transition-colors"
+                  className="relative inline-block no-underline group font-kalam font-bold text-[23.4px] text-black/60 hover:text-black transition-colors"
                 >
                   Lets Connect
                   <span className="absolute left-0 bottom-[2px] h-[2.5px] w-0 bg-black transition-all duration-300 ease-out group-hover:w-full" />
