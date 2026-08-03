@@ -7,6 +7,14 @@ interface FooterCharacterProps {
   views: number;
 }
 
+function ViewsLabel({ views }: FooterCharacterProps) {
+  return (
+    <p className="leading-[72px]">
+      {views} {views === 1 ? "View" : "Views"}
+    </p>
+  );
+}
+
 function FooterCharacter({ views }: FooterCharacterProps) {
   return (
     <div className="relative w-[208px] h-[434.86px] select-none pointer-events-none">
@@ -85,8 +93,25 @@ function FooterCharacter({ views }: FooterCharacterProps) {
       <div className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[72.749px] items-center justify-center left-[104.17px] top-[271.15px] w-[75.718px]">
         <div className="flex-none rotate-[-0.57deg]">
           <div className="[word-break:break-word] flex flex-col font-kalam justify-center leading-[0] not-italic relative text-[22px] text-black/75 text-center tracking-[-0.48px] whitespace-nowrap">
-            <p className="leading-[72px]">{views} {views === 1 ? "View" : "Views"}</p>
+            <ViewsLabel views={views} />
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MobileFooterIllustration({ views }: FooterCharacterProps) {
+  return (
+    <div className="absolute left-1/2 top-1/2 w-[170px] max-w-none -translate-x-1/2 -translate-y-[calc(50%+85px)]">
+      <img
+        alt=""
+        className="block w-full max-w-none object-contain"
+        src="/Footer illusration.svg"
+      />
+      <div className="absolute left-1/2 top-[75.6%] flex h-[26px] w-[76px] -translate-x-1/2 -translate-y-1/2 rotate-[-0.57deg] items-center justify-center bg-[#ffe4d8]">
+        <div className="[word-break:break-word] flex flex-col font-kalam justify-center leading-[0] not-italic text-[19px] text-black/75 text-center tracking-[-0.38px] whitespace-nowrap">
+          <ViewsLabel views={views} />
         </div>
       </div>
     </div>
@@ -104,8 +129,24 @@ export default function Footer() {
       const current = stored ? parseInt(stored, 10) : 0;
       const nextViews = current + 1;
       localStorage.setItem("portfolio_views", nextViews.toString());
-      setViews(nextViews);
+      const timeoutId = window.setTimeout(() => setViews(nextViews), 0);
+
+      return () => window.clearTimeout(timeoutId);
     }
+  }, []);
+
+  useEffect(() => {
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key !== "portfolio_views") return;
+
+      const nextViews = event.newValue ? parseInt(event.newValue, 10) : 0;
+      if (!Number.isNaN(nextViews)) {
+        setViews(nextViews);
+      }
+    };
+
+    window.addEventListener("storage", handleStorage);
+    return () => window.removeEventListener("storage", handleStorage);
   }, []);
 
   useEffect(() => {
@@ -143,7 +184,7 @@ export default function Footer() {
               <img alt="" className="absolute inset-0 block size-full max-w-none" src="/images/work/prof-note-paper.svg" />
             </div>
             <div className="absolute inset-[0_53.32%_91.23%_9.8%]">
-              <img alt="" className="absolute left-1/2 top-1/2 block w-[170px] max-w-none -translate-x-1/2 -translate-y-[calc(50%+85px)] object-contain" src="/Footer illusration.svg" />
+              <MobileFooterIllustration views={views} />
             </div>
 
             <div className="absolute inset-[13.5%_10%_10%_15.5%] flex flex-col gap-4 -rotate-[6.5deg] origin-center">

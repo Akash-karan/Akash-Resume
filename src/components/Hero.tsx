@@ -50,7 +50,7 @@ export default function Hero() {
       id="top"
       className="relative min-h-screen w-full overflow-hidden pb-16 pt-24 md:pt-[192px] lg:pt-28 flex flex-col justify-center items-center"
     >
-      <div className="relative mx-auto w-full max-w-[1136px] md:max-w-[722px] lg:max-w-[1136px] px-6 flex flex-col lg:flex-row items-center lg:items-end justify-between gap-12 lg:gap-8 pt-0 -translate-y-[10px]">
+      <div className="relative mx-auto w-full max-w-[1136px] md:max-w-[722px] lg:max-w-[1136px] px-6 flex flex-col lg:flex-row items-center lg:items-end justify-between gap-12 lg:gap-8 pt-0 -translate-y-[10px] lg:translate-y-[10px]">
         
         {/* Left Column: Text & CTA */}
         <div className="flex flex-col gap-6 md:gap-8 w-full max-w-[514px] text-left shrink-0 z-10 relative">
