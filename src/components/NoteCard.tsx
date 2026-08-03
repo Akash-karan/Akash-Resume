@@ -101,7 +101,7 @@ export default function NoteCard({ clickCount, onNext, onCardClickBeforeActive }
         className="flex-[1_0_0] flex flex-col justify-between pb-[7.941px] sm:pb-[11.018px] pl-[4.292px] sm:pl-[5.956px] pr-[7.941px] sm:pr-[11.018px] pt-[0.429px] sm:pt-[0.596px] rounded-[0.429px] sm:rounded-[0.596px] w-full max-w-full relative z-10 bg-repeat bg-[length:159.8px_12.4px] sm:bg-[length:221.8px_17.2px] bg-top-left overflow-hidden"
         style={{ backgroundImage: "url('/images/v2/frame25.png')" }}
       >
-        <p className="font-kalam font-normal text-[8.648px] sm:text-[12px] leading-[1.1] sm:leading-[17.272px] text-black/70 whitespace-pre-wrap pr-1 sm:pr-2">
+        <p className="font-kalam font-normal text-[8.648px] sm:text-[12px] leading-[12.4px] sm:leading-[17.272px] text-black/70 whitespace-pre-wrap pr-1 sm:pr-2 pt-[0.5px] sm:pt-0">
           {current.body}
         </p>
 
