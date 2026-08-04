@@ -186,7 +186,7 @@ export default function Hero() {
               whileDrag={{ scale: 1.2, cursor: "grabbing" }}
               initial={{ rotate: -7.63 }}
               style={{ touchAction: "pan-y" }}
-              className="absolute left-[calc(22%-1px)] md:left-[calc(22%+9px)] lg:left-[calc(22%-5px)] top-[28%] md:top-[calc(28%-7px)] lg:top-[28%] w-[32px] h-[31px] sm:w-[47px] sm:h-[46px] bg-[#ff8901] rounded-[2px] p-[4px] sm:p-[6px] shadow-[2px_2px_4px_rgba(16,24,40,0.15)] flex items-center justify-center cursor-grab pointer-events-auto z-20"
+              className="absolute left-[calc(22%-1px)] md:left-[calc(22%+9px)] lg:left-[calc(22%+2px)] top-[28%] md:top-[calc(28%-7px)] lg:top-[calc(28%-5px)] w-[32px] h-[31px] sm:w-[47px] sm:h-[46px] bg-[#ff8901] rounded-[2px] p-[4px] sm:p-[6px] shadow-[2px_2px_4px_rgba(16,24,40,0.15)] flex items-center justify-center cursor-grab pointer-events-auto z-20"
             >
               <div className="relative w-full h-full pointer-events-none select-none">
                 <Image
