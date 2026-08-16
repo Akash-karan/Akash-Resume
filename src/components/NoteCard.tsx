@@ -89,15 +89,15 @@ export default function NoteCard({ clickCount, onNext, onCardClickBeforeActive, 
         {/* Underline vector */}
         <div className="w-full max-w-[145px] sm:max-w-[211px] mt-[1px] sm:mt-[2px]">
           <svg
-            className="w-full h-[2px] sm:h-[3px] overflow-visible"
-            viewBox="0 0 211 3"
+            className="w-full h-[1.5px] sm:h-[2px] overflow-visible"
+            viewBox="0 0 211 2"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M0 1.5H211"
+              d="M0 1H211"
               stroke="#F15353"
-              strokeWidth="2"
+              strokeWidth="1"
               strokeLinecap="round"
             />
           </svg>
