@@ -109,7 +109,7 @@ export default function Nav() {
             setOpen(false);
             smoothScrollTo("#top");
           }}
-          className="group relative block h-9 w-[28px] shrink-0 sm:h-[55px] sm:w-[43px]"
+          className="group relative block h-[43.2px] w-[33.6px] shrink-0 sm:h-[55px] sm:w-[43px]"
         >
           <Logo className="h-full w-full" />
         </a>

@@ -87,12 +87,11 @@ export default function NoteCard({ clickCount, onNext, onCardClickBeforeActive, 
           {current.title}
         </p>
         {/* Underline vector */}
-        <div className="relative w-[152.705px] sm:w-[211.895px] h-[4px] sm:h-[6px] mt-[-1px] sm:mt-[-2px]">
-          <Image
+        <div className="relative w-[145px] sm:w-[211.895px] h-[2px] sm:h-[3px] mt-[0.5px] sm:mt-[-1px] overflow-hidden">
+          <img
             src="/images/v2/vector3.svg"
             alt=""
-            fill
-            className="object-contain"
+            className="w-full h-full object-fill block max-w-none"
           />
         </div>
       </div>

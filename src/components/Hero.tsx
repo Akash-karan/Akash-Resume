@@ -179,13 +179,13 @@ export default function Hero() {
           {/* Laptop Screen Boundary Container for Draggable Stickers */}
           <div 
             ref={screenRef}
-            className="absolute left-[57.7%] top-[38%] w-[40.5%] h-[60.5%] pointer-events-none z-20"
+            className="absolute left-[57.7%] top-[38%] w-[40.5%] h-[60.5%] pointer-events-none z-20 overflow-hidden rounded-[4px]"
           >
             {/* Draggable Sticker 1 (Orange card) */}
             <motion.div
               drag
               dragConstraints={screenRef}
-              dragElastic={0.01}
+              dragElastic={0}
               dragMomentum={false}
               whileHover={{ scale: 1.15 }}
               whileDrag={{ scale: 1.2, cursor: "grabbing" }}
@@ -216,7 +216,7 @@ export default function Hero() {
             <motion.div
               drag
               dragConstraints={screenRef}
-              dragElastic={0.01}
+              dragElastic={0}
               dragMomentum={false}
               whileHover={{ scale: 1.15 }}
               whileDrag={{ scale: 1.2, cursor: "grabbing" }}
