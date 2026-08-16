@@ -87,13 +87,20 @@ export default function NoteCard({ clickCount, onNext, onCardClickBeforeActive, 
           {current.title}
         </p>
         {/* Underline vector */}
-        <div className="relative w-[152.705px] sm:w-[211.895px] h-[4.32px] sm:h-[6px] mt-[-1px] sm:mt-[-2px]">
-          <Image
-            src="/images/v2/vector3.svg"
-            alt=""
-            fill
-            className="object-contain object-left"
-          />
+        <div className="w-full max-w-[145px] sm:max-w-[211px] mt-[1px] sm:mt-[2px]">
+          <svg
+            className="w-full h-[2px] sm:h-[3px] overflow-visible"
+            viewBox="0 0 211 3"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 1.5H211"
+              stroke="#F15353"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
         </div>
       </div>
 
