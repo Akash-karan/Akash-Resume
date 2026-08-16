@@ -9,6 +9,7 @@ interface NoteCardProps {
   clickCount: number;
   onNext: () => void;
   onCardClickBeforeActive?: () => void;
+  wobbleTrigger?: number;
 }
 
 export const noteCardStates = [
@@ -39,7 +40,7 @@ export const noteCardStates = [
   }
 ];
 
-export default function NoteCard({ clickCount, onNext, onCardClickBeforeActive }: NoteCardProps) {
+export default function NoteCard({ clickCount, onNext, onCardClickBeforeActive, wobbleTrigger = 0 }: NoteCardProps) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -57,7 +58,7 @@ export default function NoteCard({ clickCount, onNext, onCardClickBeforeActive }
 
   return (
     <motion.div
-      key={stateIndex}
+      key={`${stateIndex}-${wobbleTrigger}`}
       initial={{ rotate: -5, scale: 0.95, opacity: 0.9 }}
       animate={{ rotate: -3, scale: 1, opacity: 1 }}
       whileHover={{ rotate: -1, scale: 1.02 }}

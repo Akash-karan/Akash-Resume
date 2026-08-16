@@ -9,6 +9,7 @@ import NoteCard from "./NoteCard";
 export default function Hero() {
   const [clickCount, setClickCount] = useState(0);
   const [hasClickedName, setHasClickedName] = useState(false);
+  const [wobbleTrigger, setWobbleTrigger] = useState(0);
   const [isHighlighting, setIsHighlighting] = useState(false);
   const [lookLeft, setLookLeft] = useState(false);
   const screenRef = useRef<HTMLDivElement>(null);
@@ -29,8 +30,12 @@ export default function Hero() {
   }, []);
 
   const handleNameClick = () => {
-    setClickCount(1);
-    setHasClickedName(true);
+    if (!hasClickedName) {
+      setClickCount(1);
+      setHasClickedName(true);
+    } else {
+      setWobbleTrigger((prev) => prev + 1);
+    }
   };
 
   const handleNextCardState = () => {
@@ -169,7 +174,7 @@ export default function Hero() {
           </div>
 
           {/* Interactive Ruled Note Card Component */}
-          <NoteCard clickCount={clickCount} onNext={handleNextCardState} onCardClickBeforeActive={handleCardClickBeforeActive} />
+          <NoteCard clickCount={clickCount} onNext={handleNextCardState} onCardClickBeforeActive={handleCardClickBeforeActive} wobbleTrigger={wobbleTrigger} />
 
           {/* Laptop Screen Boundary Container for Draggable Stickers */}
           <div 
