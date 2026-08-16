@@ -124,29 +124,21 @@ export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("portfolio_views");
-      const current = stored ? parseInt(stored, 10) : 0;
-      const nextViews = current + 1;
-      localStorage.setItem("portfolio_views", nextViews.toString());
-      const timeoutId = window.setTimeout(() => setViews(nextViews), 0);
+    let isMounted = true;
+    fetch("/api/views")
+      .then((res) => res.json())
+      .then((data) => {
+        if (isMounted && data && typeof data.views === "number") {
+          setViews(data.views);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to fetch shared view count:", err);
+      });
 
-      return () => window.clearTimeout(timeoutId);
-    }
-  }, []);
-
-  useEffect(() => {
-    const handleStorage = (event: StorageEvent) => {
-      if (event.key !== "portfolio_views") return;
-
-      const nextViews = event.newValue ? parseInt(event.newValue, 10) : 0;
-      if (!Number.isNaN(nextViews)) {
-        setViews(nextViews);
-      }
+    return () => {
+      isMounted = false;
     };
-
-    window.addEventListener("storage", handleStorage);
-    return () => window.removeEventListener("storage", handleStorage);
   }, []);
 
   useEffect(() => {
