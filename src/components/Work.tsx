@@ -1,7 +1,6 @@
 "use client";
 
 import { Fragment, useState } from "react";
-import { site } from "@/lib/site";
 import WorkCard from "./WorkCard";
 import ProfessionalEmptyState from "./ProfessionalEmptyState";
 

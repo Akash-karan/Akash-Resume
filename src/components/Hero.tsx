@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { site, gmailComposeHref } from "@/lib/site";
+import { site } from "@/lib/site";
 import NoteCard from "./NoteCard";
 
 export default function Hero() {
