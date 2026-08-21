@@ -20,7 +20,7 @@ export const noteCardStates = [
   },
   {
     title: "Akash /ə-kaash/",
-    body: "product designer.\nCan't ignore bad UX — clutter is the first thing I notice, and the first thing I fix.",
+    body: "Product designer.\nCan't ignore bad UX — clutter is the first thing I notice, and the first thing I fix.",
     type: "info"
   },
   {
