@@ -20,7 +20,7 @@ export const noteCardStates = [
   },
   {
     title: "Akash /ə-kaash/",
-    body: "Product Designer.\n\nAllergic to bad UX. Symptoms flare up near cluttered screens.",
+    body: "product designer\n\nCan't ignore bad UX — clutter is the first thing I notice, and the first thing I fix.",
     type: "info"
   },
   {

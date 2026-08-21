@@ -6,10 +6,10 @@ import WorkCard from "./WorkCard";
 import ProfessionalEmptyState from "./ProfessionalEmptyState";
 
 const ribbonSkills = [
-  { label: "Web Design", face: "/images/work/ribbon-face-a.svg" },
-  { label: "Saas Products", face: "/images/work/ribbon-face-a.svg" },
-  { label: "Illustration", face: "/images/work/ribbon-face-b.svg" },
-  { label: "Graphic Design", face: "/images/work/ribbon-face-c.svg" },
+  { label: "Product thinking", face: "/images/work/ribbon-face-a.svg" },
+  { label: "UX research", face: "/images/work/ribbon-face-a.svg" },
+  { label: "UI Design", face: "/images/work/ribbon-face-b.svg" },
+  { label: "AI powered design", face: "/images/work/ribbon-face-c.svg" },
 ];
 
 // Built at the exact Figma size and scaled down, so the nested pixel offsets

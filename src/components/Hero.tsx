@@ -30,12 +30,11 @@ export default function Hero() {
   }, []);
 
   const handleNameClick = () => {
-    if (!hasClickedName) {
+    if (clickCount !== 1) {
       setClickCount(1);
       setHasClickedName(true);
-    } else {
-      setWobbleTrigger((prev) => prev + 1);
     }
+    setWobbleTrigger((prev) => prev + 1);
   };
 
   const handleNextCardState = () => {
@@ -53,7 +52,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen w-full overflow-hidden pb-16 pt-24 md:pt-[192px] lg:pt-28 flex flex-col justify-center items-center"
+      className="relative min-h-[80vh] md:min-h-screen w-full overflow-hidden pb-[24px] pt-[91px] md:pb-16 md:pt-[192px] lg:pt-28 flex flex-col justify-center items-center"
     >
       <div className="relative mx-auto w-full max-w-[1136px] md:max-w-[722px] lg:max-w-[1136px] px-6 flex flex-col lg:flex-row items-center lg:items-end justify-between gap-12 lg:gap-8 pt-0 -translate-y-[10px] lg:translate-y-[10px]">
         
@@ -80,7 +79,7 @@ export default function Hero() {
 
           <div className="font-sans font-medium text-[16px] leading-[24px] text-ink-soft max-w-[514px]">
             <p>
-              <span className="font-bold text-[#101828]">1+ year</span> of turning ideas into screens. Not the most experienced in the room — but probably the <span className="font-bold text-[#101828]">most curious.</span> I ask why before I ask how, and that makes all the difference in what I build.
+              <span className="font-bold text-[#101828]">1.5+ years</span> of turning ideas into products people actually use. Not the most experienced in the room — but probably the <span className="font-bold text-[#101828]">most curious.</span> I ask why before I ask how, and that makes all the difference in what I build.
             </p>
           </div>
 
@@ -250,7 +249,7 @@ export default function Hero() {
 
       {/* Floating Scroll to Explore text (visible on desktop only; hidden on tablet) */}
       <div className="absolute bottom-6 hidden lg:flex flex-col items-center select-none pointer-events-none">
-        <span className="font-kalam text-[24px] text-black/25 tracking-[-0.48px] not-italic">
+        <span className="font-kalam text-[24px] text-black/35 tracking-[-0.48px] not-italic">
           Scroll to Explore
         </span>
       </div>

@@ -10,14 +10,14 @@ const books = [
     cover: "/images/about/book-almanack.png",
     width: 100,
     height: 149,
-    link: "https://www.navalmanack.com/",
+    link: "https://www.goodreads.com/book/show/54898389-the-almanack-of-naval-ravikant",
   },
   {
     title: "Atomic Habits",
     cover: "/images/about/book-atomic.png",
     width: 96,
     height: 149,
-    link: "https://jamesclear.com/atomic-habits",
+    link: "https://www.goodreads.com/book/show/40121378-atomic-habits",
   },
   {
     title: "How to Win Friends And Influence People",
@@ -347,7 +347,7 @@ export default function About() {
         </a>
 
         {/* Polaroid (on desktop: absolutely positioned relative to the outer container; below: stacked under CTA) */}
-        <div className="relative mx-auto w-full max-w-[380px] pt-2 lg:pointer-events-none lg:absolute lg:left-[605px] lg:top-[114px] lg:mx-0 lg:w-[376px] lg:max-w-none lg:pt-0">
+        <div className="relative mx-auto w-full max-w-[380px] pt-2 lg:pointer-events-none lg:absolute lg:left-[605px] lg:top-[134px] lg:mx-0 lg:w-[376px] lg:max-w-none lg:pt-0">
           <div className="lg:pointer-events-auto">
             <ClanPolaroid />
           </div>

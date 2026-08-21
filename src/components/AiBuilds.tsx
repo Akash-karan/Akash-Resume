@@ -9,10 +9,10 @@ const tools: Record<string, AiBuildTool> = {
 // Add an entry per build; the grid reflows from one to three columns on its own.
 const builds: AiBuild[] = [
   {
-    title: "Job Hunt Agent",
+    title: "Job Hunt Tool",
     icon: "/images/ai-builds/emoji-robot.svg",
     description:
-      "An automated agent on GCP that filters jobs by role, location, and salary, scrapes listings via Apify, and emails me matches every 2 days.",
+      "An automated job-matching agent that filters listings by role, location, and salary, then emails curated matches on a set schedule.",
     tools: [tools.openai, tools.cursor],
     href: "https://github.com/Akash-karan/job-search-agent",
   },
