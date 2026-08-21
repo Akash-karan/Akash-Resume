@@ -52,7 +52,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[80vh] md:min-h-screen w-full overflow-hidden pb-[24px] pt-[91px] md:pb-16 md:pt-[192px] lg:pt-28 flex flex-col justify-center items-center"
+      className="relative min-h-[80vh] md:min-h-screen w-full overflow-hidden pb-[24px] pt-[98px] md:pb-16 md:pt-[192px] lg:pt-28 flex flex-col justify-center items-center"
     >
       <div className="relative mx-auto w-full max-w-[1136px] md:max-w-[722px] lg:max-w-[1136px] px-6 flex flex-col lg:flex-row items-center lg:items-end justify-between gap-12 lg:gap-8 pt-0 -translate-y-[10px] lg:translate-y-[10px]">
         
